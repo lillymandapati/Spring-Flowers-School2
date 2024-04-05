@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Application</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      border: 2px solid black;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    header {
+      background-color: darkcyan;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ddd;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .welcome-section {
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-bottom: 5px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .time-table {
+      display: none;
+      padding: 20px;
+      background-color: darkcyan;
+      color: white;
+    }
+
+    .time-table h2 {
+      text-align: center;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="schoolLogo.png.png" alt="School Logo">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#" id="timeTableBtn">TimeTable</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="welcome-section">
+        <h1>Welcome to Spring Flowers School Student Portal!</h1>
+        <a href="#" class="btn" id="showTimeTable">Time Table</a>
+      </section>
+      <section id="timeTable" class="time-table">
+        <h2>Time Table</h2>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Day</th>
+                <th>Time</th>
+                <th>Subject</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monday</td>
+                <td>9:00 AM - 10:30 AM</td>
+                <td>Mathematics</td>
+              </tr>
+              <tr>
+                <td>Tuesday</td>
+                <td>11:00 AM - 12:30 PM</td>
+                <td>Science</td>
+              </tr>
+              <tr>
+                <td>Wednesday</td>
+                <td>1:00 pM - 2:30 PM</td>
+                <td>English</td>
+              </tr>
+              <tr>
+                <td>Thursday</td>
+                <td>3:00 AM - 4:30 PM</td>
+                <td>Biology</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#showTimeTable, #timeTableBtn").click(function() {
+        $("#timeTable").toggle();
+      });
+    });
+  </script>
+</body>
+</html>
